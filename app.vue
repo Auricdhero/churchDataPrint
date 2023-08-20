@@ -5,7 +5,7 @@
       <v-col v-for="member in chData" :key="member.id" cols="auto" lg="12" md="12" sm="12">
 
         <v-container class="memData">
-          <v-btn @click="printMember" icon><v-icon>mdi-printer</v-icon></v-btn><br>
+          <!-- <v-btn @click="printMember" icon><v-icon>mdi-printer</v-icon></v-btn><br> -->
           <h1 class="text-center">Membership Data</h1><br>
           <!-- <p class="text-muted">{{ member['Church Number'] }}</p> -->
           <v-row>
@@ -161,11 +161,11 @@
 </template>
 <script setup>
 import chData from './chmembers.json';
-// console.log(chData)
-
-function printMember() {
-  this.$htmlToPaper('memData')
-}
+// import htmlToPaper from 'vue-html-to-paper'
+// // console.log(chData)
+// const printMember = async() => {
+//   await htmlToPaper('memData');
+// };
 </script>
 <style scoped>
 /* @media print {
