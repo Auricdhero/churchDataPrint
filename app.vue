@@ -5,7 +5,7 @@
       <v-col v-for="member in chData" :key="member.id" cols="auto" lg="12" md="12" sm="12">
 
         <v-container class="memData" ref="memData">
-          <v-btn  icon><v-icon>mdi-printer</v-icon></v-btn><br>
+          <v-btn icon><v-icon>mdi-printer</v-icon></v-btn><br>
           <h1 class="text-center">Membership Data</h1><br>
           <!-- <p class="text-muted">{{ member['Church Number'] }}</p> -->
           <v-row>
@@ -17,7 +17,8 @@
             <v-col cols="auto" sm="12" md="6" lg="6">
               <v-label>Phone Number</v-label>
               <div class="text-area" v-if="member['Phone / Contact numbers'] === null"></div>
-              <p v-else>{{ member['Phone / Contact numbers'] }}</p><br>
+              <p v-else-if="member['Phone / Contact numbers'].length < 10">0{{ member['Phone / Contact numbers'] }}</p>
+              <p v-else>{{ member['Phone / Contact numbers'] }}</p>
             </v-col>
           </v-row>
           <v-row>
@@ -163,6 +164,7 @@
 </template>
 <script setup>
 import chData from './chmembers.json';
+
 // import html2pdf from 'html2pdf.js'
 // const printData = async () => {
 //   if (!$isClient) {
