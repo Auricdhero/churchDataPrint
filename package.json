@@ -19,6 +19,7 @@
     "@mdi/font": "^7.2.96",
     "@nuxtjs/composition-api": "^0.33.1",
     "axios": "^1.4.0",
+    "html2pdf.js": "^0.10.1",
     "sass": "^1.66.0",
     "vite-plugin-vuetify": "^1.0.2",
     "vue-html-to-paper": "^2.0.3",
