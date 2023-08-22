@@ -11,14 +11,17 @@
           <v-row>
             <v-col cols="auto" sm="12" md="6" lg="6">
               <v-label>Fullname:</v-label>
-              <p class="text-capitalize">{{ member['Full Name'] }}</p><br />
+              <p class="text-custom-case">{{ member['Full Name'] }}</p><br />
               <!-- <p v-else></p> -->
             </v-col>
             <v-col cols="auto" sm="12" md="6" lg="6">
               <v-label>Phone Number</v-label>
               <div class="text-area" v-if="member['Phone / Contact numbers'] === null"></div>
-              <p v-else-if="member['Phone / Contact numbers'].length < 10">0{{ member['Phone / Contact numbers'] }}</p>
+              <p
+                v-else-if="member['Phone / Contact numbers'].length < 10">
+                0{{ member['Phone / Contact numbers'] }}</p>
               <p v-else>{{ member['Phone / Contact numbers'] }}</p>
+              <!-- <p v-else>{{ member['Phone / Contact numbers'] }}</p> -->
             </v-col>
           </v-row>
           <v-row>
@@ -72,8 +75,8 @@
           <v-row>
             <v-col cols="auto" sm="12" md="6" lg="6">
               <v-label>Region you come form if you're Ghanaian</v-label>
-              <!-- <p v-if="member["Region you come from if you're Ghanaian"]===null">_________________________</p> -->
-              <p class="text-capitalize">{{ member["Region you come from if you're Ghanaian"] }}</p>
+              <p class="text-area" v-if="member['Region you come from if youre Ghanaian']===null"></p>
+              <p class="text-capitalize">{{ member['Region you come from if youre Ghanaian'] }}</p>
             </v-col>
             <v-col cols="auto" sm="12" md="6" lg="6">
               <v-label>Residential Address</v-label>
@@ -195,5 +198,10 @@ import chData from './chmembers.json';
   border-style: solid solid solid solid;
   height: 4em;
   /* border-radius: 50%; */
+}
+
+.text-custom-case {
+  text-decoration: none;
+  text-transform: capitalize;
 }
 </style>
