@@ -38,5 +38,8 @@ export default defineNuxtConfig({
       // )
     }
   },
-  plugins: ['~/plugins/print.js'],
+  // generate: {
+  //   minify: false,
+  //   routes: dynamicRoutes
+  // },
 })
