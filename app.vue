@@ -1,11 +1,9 @@
 <template>
   <div>
 
-    <v-row>
+    <v-row class="print">
       <!-- <h1>{{ fullName }}</h1> -->
       <v-col v-for="member in chData" :key="member.id" cols="12">
-
-
         <!-- <v-btn id="printData" icon><v-icon>mdi-printer</v-icon></v-btn><br> -->
         <h1 class="text-center">Membership Data</h1>
         <!-- <p class="text-muted">{{ member['Church Number'] }}</p> -->
@@ -175,11 +173,11 @@
             <p class="text-capitalize">{{ member['Occupation'] }}</p>
           </v-col>
         </v-row>
-        <v-row>
+        <v-row  class="break">
           <v-col cols="6">
             <v-label class="label">Place of Work</v-label>
             <div class="text-area" v-if="member['Place of Work'] === null"></div>
-            <p v-else class="text-capitalize">{{ member['Place of Work'] }}</p><br/>
+            <p v-else class="text-capitalize">{{ member['Place of Work'] }}</p><br />
           </v-col>
         </v-row>
         <br />
@@ -192,6 +190,8 @@
 import chData from './chmembers.json';
 import { useDateFormat } from '@vueuse/core';
 import { useChangeCase } from '@vueuse/integrations/useChangeCase';
+
+
 
 
 </script>
@@ -210,9 +210,16 @@ p {
 .label {
   font-size: 12px;
 }
+.break{
+  page-break-after: always;
+}
+.print {
+  page-break-after: always;
+}
 
 @page {
   size: A4;
-  width: max-content;
+  margin-top: 6%;
+  /* page-break-before: always; */
 }
 </style>
